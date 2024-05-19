@@ -2,7 +2,7 @@ const URL= require("../models/url");
 const shortid = require('shortid');
 
 function handleGetUrl(req,res){
-    return res.status(200).end("hello I am server");    
+   return res.status(200).end("hello I am server");    
 }
 
 async function handleGenerateShortUrl(req,res){
@@ -13,7 +13,7 @@ async function handleGenerateShortUrl(req,res){
         shortId: shortId,
         redirectUrl:body
    })
-   return res.status(201).json({id:shortId});
+   return res.render("home",{id: shortId});
 }
 
 async function handleRedirectUrl (req,res){
